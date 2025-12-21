@@ -95,9 +95,12 @@ export const BiodataWizard = ({ onClose, onAiAssist }: BiodataWizardProps) => {
       <div className="bg-white border-b sticky top-0 z-10 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-2xl font-bold text-gray-900">
-              Create Marriage Biodata
-            </h2>
+            <div className="flex items-center space-x-2">
+              <h2 className="text-2xl font-bold text-gray-900">
+                Biodataforwedding
+              </h2>
+              <span className="text-gray-500 hidden sm:block">| Create Marriage Biodata</span>
+            </div>
             <button
               onClick={onClose}
               className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
