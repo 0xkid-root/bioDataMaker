@@ -138,7 +138,7 @@ export const LandingPage = ({ onGetStarted }: LandingPageProps) => {
 
       <footer className="border-t border-gray-200 mt-16 py-8">
         <div className="max-w-7xl mx-auto px-4 text-center text-gray-600">
-          <p>Made with care for Indian families</p>
+          <p>BiodataForWedding – A free and simple wedding biodata maker trusted by families across India.</p>
         </div>
       </footer>
     </div>
