@@ -14,156 +14,61 @@ export const LandingPage = ({ onGetStarted }: LandingPageProps) => {
             <Heart className="w-12 h-12 text-rose-500 fill-rose-500" />
           </div>
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-            Create Wedding Biodata Online – Free & Professional
+            Create Beautiful
+            <br />
+            <span className="bg-gradient-to-r from-blue-600 to-rose-600 bg-clip-text text-transparent">
+              Marriage Biodata
+            </span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            BiodataForWedding helps you create a clean, modern, and professional wedding biodata in minutes — no login, no signup, and completely free.
+            Professional marriage biodata maker with premium templates.
+            Free forever, no login required.
           </p>
           <button
             onClick={onGetStarted}
             className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-12 py-4 rounded-xl text-lg font-semibold hover:from-blue-700 hover:to-blue-800 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
           >
-            Create Wedding Biodata
+            Create Biodata Free
           </button>
         </div>
 
-        <div className="bg-blue-50 rounded-2xl p-6 mb-16">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="flex items-center">
-              <span className="text-green-500 mr-2 text-xl">✔</span>
-              <span className="font-medium text-gray-800">100% Free Wedding Biodata Maker</span>
-            </div>
-            <div className="flex items-center">
-              <span className="text-green-500 mr-2 text-xl">✔</span>
-              <span className="font-medium text-gray-800">No Login or Signup Required</span>
-            </div>
-            <div className="flex items-center">
-              <span className="text-green-500 mr-2 text-xl">✔</span>
-              <span className="font-medium text-gray-800">High-Quality & Printable Templates</span>
-            </div>
-            <div className="flex items-center">
-              <span className="text-green-500 mr-2 text-xl">✔</span>
-              <span className="font-medium text-gray-800">Privacy-First – Your Data Stays Safe</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-12 mb-16">
-          <div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">What is Wedding Biodata?</h2>
-            <p className="text-gray-600">
-              A wedding biodata is a formal personal profile shared for marriage purposes. It usually includes personal details, education, profession, family background, and preferences. BiodataForWedding makes it easy to create this biodata in a professional and well-structured format.
-            </p>
-          </div>
-          <div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Why BiodataForWedding?</h2>
-            <p className="text-gray-600">
-              BiodataForWedding is designed to help individuals and families create a perfect wedding biodata without complexity.
-            </p>
-            <ul className="mt-4 space-y-2 text-gray-600">
-              <li className="flex items-start">
-                <span className="text-blue-500 mr-2">•</span>
-                <span>Free wedding biodata maker</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-blue-500 mr-2">•</span>
-                <span>No watermark or hidden charges</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-blue-500 mr-2">•</span>
-                <span>Simple, modern, and traditional formats</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-blue-500 mr-2">•</span>
-                <span>Instant preview and download</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-blue-500 mr-2">•</span>
-                <span>Suitable for all communities</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="bg-white rounded-2xl shadow-lg p-8 mb-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">How It Works</h2>
-          <p className="text-gray-600 text-center mb-8 max-w-2xl mx-auto">
-            How to Create Wedding Biodata Online
-          </p>
-          <div className="grid md:grid-cols-4 gap-6">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-xl mx-auto mb-4">1</div>
-              <h3 className="font-semibold text-gray-900 mb-2">Choose Template</h3>
-              <p className="text-gray-600 text-sm">Select a wedding biodata template</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-xl mx-auto mb-4">2</div>
-              <h3 className="font-semibold text-gray-900 mb-2">Fill Details</h3>
-              <p className="text-gray-600 text-sm">Add personal and family information</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-xl mx-auto mb-4">3</div>
-              <h3 className="font-semibold text-gray-900 mb-2">Preview</h3>
-              <p className="text-gray-600 text-sm">Review your biodata instantly</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-xl mx-auto mb-4">4</div>
-              <h3 className="font-semibold text-gray-900 mb-2">Download</h3>
-              <p className="text-gray-600 text-sm">Save or share your wedding biodata</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Wedding Biodata Templates</h2>
-          <p className="text-gray-600 text-center mb-8 max-w-2xl mx-auto">
-            Professional Wedding Biodata Formats<br />
-            Choose from multiple wedding biodata formats designed for both modern and traditional preferences. All templates are clean, readable, and suitable for parents, relatives, and marriage discussions.
-          </p>
-        </div>
-
-        <div className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Who Can Use BiodataForWedding?</h2>
-          <div className="bg-white rounded-2xl shadow-lg p-8 max-w-4xl mx-auto">
-            <ul className="grid md:grid-cols-2 gap-4">
-              <li className="flex items-start">
-                <span className="text-blue-500 mr-2 mt-1">•</span>
-                <span>Boys and girls preparing marriage biodata</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-blue-500 mr-2 mt-1">•</span>
-                <span>Parents searching for suitable matches</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-blue-500 mr-2 mt-1">•</span>
-                <span>Families involved in arranged marriages</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-blue-500 mr-2 mt-1">•</span>
-                <span>Anyone looking for a professional wedding biodata</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 mb-16">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Free Wedding Biodata Maker</h2>
-            <p className="text-gray-600 mb-4">
-              Create Wedding Biodata Without Login
-            </p>
-            <p className="text-gray-600">
-              With BiodataForWedding, you can create and download your wedding biodata without creating an account. Your data remains private and is not stored on our servers.
-            </p>
-          </div>
-        </div>
-
-        <div className="mb-16 text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Download & Share</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Download Wedding Biodata Instantly<br />
-            Download your wedding biodata in high-quality format and share it easily via WhatsApp, email, or print.
-          </p>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <FeatureCard
+            icon={<Lock className="w-8 h-8" />}
+            title="No Login Required"
+            description="Start creating immediately. No sign-up, no email verification needed."
+            color="blue"
+          />
+          <FeatureCard
+            icon={<Sparkles className="w-8 h-8" />}
+            title="Premium Templates Free"
+            description="Access 15+ professional templates designed by experts. All completely free."
+            color="purple"
+          />
+          <FeatureCard
+            icon={<Zap className="w-8 h-8" />}
+            title="AI Writing Assistant"
+            description="Get help writing professional descriptions with built-in AI suggestions."
+            color="amber"
+          />
+          <FeatureCard
+            icon={<Download className="w-8 h-8" />}
+            title="Download Instantly"
+            description="Generate high-quality PDF instantly. Unlimited downloads, no watermarks."
+            color="green"
+          />
+          <FeatureCard
+            icon={<Share2 className="w-8 h-8" />}
+            title="Easy Sharing"
+            description="Share via link or QR code with family and matchmakers securely."
+            color="rose"
+          />
+          <FeatureCard
+            icon={<Lock className="w-8 h-8" />}
+            title="Privacy First"
+            description="Your data stays in your browser. No permanent storage on servers."
+            color="teal"
+          />
         </div>
 
         <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 mb-16">
@@ -215,24 +120,20 @@ export const LandingPage = ({ onGetStarted }: LandingPageProps) => {
 
         <div className="text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Ready to Create Your Wedding Biodata?
+            Ready to Create Your Biodata?
           </h2>
           <p className="text-gray-600 mb-8">
-            Join thousands who have created their perfect wedding biodata with BiodataForWedding
+            Join thousands who have created their perfect marriage biodata
           </p>
           <button
             onClick={onGetStarted}
             className="bg-gradient-to-r from-rose-600 to-pink-600 text-white px-12 py-4 rounded-xl text-lg font-semibold hover:from-rose-700 hover:to-pink-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
           >
-            Create Wedding Biodata
+            Start Creating Now
           </button>
         </div>
 
         <FAQSection />
-      </div>
-
-      <div className="hidden">
-        <p>BiodataForWedding is a free online wedding biodata maker that helps users create marriage biodata, wedding biodata formats, and professional biodata for wedding purposes with ease.</p>
       </div>
 
       <footer className="border-t border-gray-200 mt-16 py-8">
