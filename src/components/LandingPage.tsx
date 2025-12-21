@@ -74,53 +74,46 @@ export const LandingPage = ({ onGetStarted }: LandingPageProps) => {
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
             Why Choose Our Biodata Maker?
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Completely Free
-              </h3>
-              <ul className="space-y-3 text-gray-600">
-                <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
-                  <span>All templates included</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
-                  <span>Unlimited downloads</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
-                  <span>No hidden charges</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
-                  <span>No watermarks</span>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Fast & Easy
-              </h3>
-              <ul className="space-y-3 text-gray-600">
-                <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
-                  <span>Create in 5 minutes</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
-                  <span>Live preview as you type</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
-                  <span>Mobile-friendly interface</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
-                  <span>Auto-save your work</span>
-                </li>
-              </ul>
-            </div>
+          <p className="text-lg text-gray-600 mb-8 text-center max-w-3xl mx-auto">
+            Our biodata maker is designed to make the process of creating a professional and attractive marriage biodata as simple as possible.
+          </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <FeatureCard
+              icon={<Sparkles className="w-8 h-8" />}
+              title="Multi-language Support"
+              description="Create your biodata in Hindi, English, Marathi, Gujarati, and more. Customize your profile in your preferred language."
+              color="blue"
+            />
+            <FeatureCard
+              icon={<Sparkles className="w-8 h-8" />}
+              title="Beautiful Templates"
+              description="Choose from a variety of professionally designed templates that make your biodata stand out and leave a lasting impression."
+              color="purple"
+            />
+            <FeatureCard
+              icon={<Download className="w-8 h-8" />}
+              title="Multiple Formats"
+              description="Download your biodata in PDF, Word, or as an image. Share digitally or print for traditional marriages."
+              color="green"
+            />
+            <FeatureCard
+              icon={<Lock className="w-8 h-8" />}
+              title="Data Privacy"
+              description="Your personal information is secure. We don't store your data unnecessarily, ensuring your privacy is protected."
+              color="teal"
+            />
+            <FeatureCard
+              icon={<Zap className="w-8 h-8" />}
+              title="Easy Customization"
+              description="Simple editor to add, edit or remove sections according to your needs. Create a truly personalized marriage profile."
+              color="amber"
+            />
+            <FeatureCard
+              icon={<Heart className="w-8 h-8" />}
+              title="All Communities"
+              description="Templates for Hindu, Muslim, Christian, Sikh, Buddhist, and Jain communities. Customized for cultural preferences."
+              color="rose"
+            />
           </div>
         </div>
 
