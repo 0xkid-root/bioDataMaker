@@ -4,6 +4,7 @@ import { useBiodata } from '../context/BiodataContext';
 import { TEMPLATES } from './templates';
 import { COLORS, FONTS } from '../utils/constants';
 import { compressImage } from '../utils/helpers';
+import { TemplatePreview } from './TemplatePreview';
 
 export const TemplateCustomizer = () => {
   const { customization, updateCustomization, biodataData, updateBiodataData } =
@@ -57,19 +58,19 @@ export const TemplateCustomizer = () => {
             <button
               key={template.id}
               onClick={() => updateCustomization({ templateId: template.id })}
-              className={`p-4 rounded-lg border-2 transition-all hover:shadow-md ${
+              className={`p-3 rounded-lg border-2 transition-all hover:shadow-lg hover:-translate-y-1 ${
                 customization.templateId === template.id
-                  ? 'border-blue-600 bg-blue-50'
-                  : 'border-gray-200 hover:border-gray-300'
+                  ? 'border-blue-600 bg-blue-50 shadow-md'
+                  : 'border-gray-200 hover:border-blue-300'
               }`}
             >
-              <div className="aspect-[3/4] bg-gradient-to-br from-gray-100 to-gray-200 rounded mb-2 flex items-center justify-center">
-                <span className="text-3xl">📄</span>
+              <div className="mb-2">
+                <TemplatePreview templateId={template.id} category={template.category} />
               </div>
-              <p className="text-sm font-medium text-gray-900 text-center">
+              <p className="text-sm font-semibold text-gray-900 text-center">
                 {template.name}
               </p>
-              <p className="text-xs text-gray-500 text-center capitalize">
+              <p className="text-xs text-gray-500 text-center capitalize mt-0.5">
                 {template.category}
               </p>
             </button>

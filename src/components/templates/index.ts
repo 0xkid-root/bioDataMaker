@@ -1,5 +1,8 @@
 import { ModernTemplate1 } from './ModernTemplate1';
 import { TraditionalTemplate1 } from './TraditionalTemplate1';
+import { TraditionalElegantTemplate } from './TraditionalElegantTemplate';
+import { TraditionalRoyalTemplate } from './TraditionalRoyalTemplate';
+import { TraditionalPremiumTemplate } from './TraditionalPremiumTemplate';
 import { MinimalTemplate1 } from './MinimalTemplate1';
 import { Template } from '../../types/biodata';
 
@@ -112,10 +115,21 @@ export const TEMPLATES: Template[] = [
 ];
 
 export const getTemplateComponent = (templateId: string) => {
-  if (templateId.startsWith('traditional')) {
-    return TraditionalTemplate1;
-  } else if (templateId.startsWith('minimal')) {
-    return MinimalTemplate1;
+  switch (templateId) {
+    case 'traditional-1':
+      return TraditionalElegantTemplate;
+    case 'traditional-2':
+      return TraditionalTemplate1;
+    case 'traditional-3':
+      return TraditionalRoyalTemplate;
+    case 'traditional-4':
+      return TraditionalPremiumTemplate;
+    case 'minimal-1':
+    case 'minimal-2':
+    case 'minimal-3':
+    case 'minimal-4':
+      return MinimalTemplate1;
+    default:
+      return ModernTemplate1;
   }
-  return ModernTemplate1;
 };
