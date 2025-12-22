@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Shield } from 'lucide-react';
+import toast from 'react-hot-toast';
+import { BiodataData } from './types/biodata';
 import { BiodataProvider, useBiodata } from './context/BiodataContext';
 import { LandingPage } from './components/LandingPage';
 import { BiodataWizard } from './components/BiodataWizard';
@@ -7,6 +9,7 @@ import { BiodataPreview } from './components/BiodataPreview';
 import { ShareDialog } from './components/ShareDialog';
 import { PrivacyControls } from './components/PrivacyControls';
 import { SharedBiodataView } from './components/SharedBiodataView';
+import { ToastContainer } from './components/Toast';
 import { useAiAssist } from './hooks/useAiAssist';
 
 function AppContent() {
@@ -47,12 +50,12 @@ function AppContent() {
 
   const handleAiAssist = async (field: string, currentValue: string) => {
     if (!currentValue.trim()) {
-      alert('Please enter some text first.');
+      toast.error('Please enter some text first.');
       return;
     }
 
     if (remainingUses <= 0) {
-      alert('Daily AI assist limit reached. Try again tomorrow!');
+      toast.error('Daily AI assist limit reached. Try again tomorrow!');
       return;
     }
 
@@ -62,27 +65,28 @@ function AppContent() {
       const section = field.includes('Profession')
         ? 'education'
         : field.includes('Family')
-        ? 'family'
-        : 'lifestyle';
+          ? 'family'
+          : 'lifestyle';
 
       const fieldName = field.replace('about', '').toLowerCase();
       const key =
         field === 'partnerExpectations'
           ? 'partnerExpectations'
           : field === 'aboutMe'
-          ? 'aboutMe'
-          : field === 'aboutProfession'
-          ? 'aboutProfession'
-          : 'aboutFamily';
+            ? 'aboutMe'
+            : field === 'aboutProfession'
+              ? 'aboutProfession'
+              : 'aboutFamily';
 
+      const currentSectionData = biodataData[section as keyof BiodataData];
       updateBiodataData(section as any, {
-        ...biodataData[section as keyof typeof biodataData],
+        ...(currentSectionData && typeof currentSectionData === 'object' ? currentSectionData : {}),
         [key]: improved,
       } as any);
 
-      alert(`AI improved your text! (${remainingUses - 1} uses remaining today)`);
+      toast.success(`AI improved your text! (${remainingUses - 1} uses remaining today)`);
     } catch (error: any) {
-      alert(error.message || 'Failed to improve text. Please try again.');
+      toast.error(error.message || 'Failed to improve text. Please try again.');
     }
   };
 
@@ -127,6 +131,7 @@ function AppContent() {
 function App() {
   return (
     <BiodataProvider>
+      <ToastContainer />
       <AppContent />
     </BiodataProvider>
   );

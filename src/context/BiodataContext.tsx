@@ -5,6 +5,7 @@ import { saveToDraft, loadFromDraft, clearDraft } from '../utils/helpers';
 interface BiodataContextType {
   biodataData: Partial<BiodataData>;
   updateBiodataData: (section: keyof BiodataData, data: Partial<BiodataData[keyof BiodataData]>) => void;
+  setProfilePhoto: (photo: string) => void;
   customization: TemplateCustomization;
   updateCustomization: (updates: Partial<TemplateCustomization>) => void;
   currentStep: WizardStep;
@@ -47,12 +48,22 @@ export const BiodataProvider = ({ children }: { children: ReactNode }) => {
     section: keyof BiodataData,
     data: Partial<BiodataData[keyof BiodataData]>
   ) => {
+    setBiodataData((prev) => {
+      const currentSection = prev[section];
+      return {
+        ...prev,
+        [section]: {
+          ...(currentSection && typeof currentSection === 'object' ? currentSection : {}),
+          ...data,
+        },
+      };
+    });
+  };
+
+  const setProfilePhoto = (photo: string) => {
     setBiodataData((prev) => ({
       ...prev,
-      [section]: {
-        ...(prev[section] || {}),
-        ...data,
-      },
+      profilePhoto: photo,
     }));
   };
 
@@ -72,6 +83,7 @@ export const BiodataProvider = ({ children }: { children: ReactNode }) => {
       value={{
         biodataData,
         updateBiodataData,
+        setProfilePhoto,
         customization,
         updateCustomization,
         currentStep,
