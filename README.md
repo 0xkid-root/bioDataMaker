@@ -2,7 +2,6 @@
 
 A modern, free, and easy-to-use wedding biodata maker that helps you create professional marriage biodata documents in minutes.
 
-![BiodataForWedding Banner](https://bolt.new/static/og_default.png)
 
 ## Features
 
