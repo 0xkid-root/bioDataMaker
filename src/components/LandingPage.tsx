@@ -1,11 +1,21 @@
 import { Heart, Lock, Sparkles, Download, Share2, Zap, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface LandingPageProps {
-  onGetStarted: () => void;
+  onGetStarted?: () => void;
 }
 
 export const LandingPage = ({ onGetStarted }: LandingPageProps) => {
+  const navigate = useNavigate();
+  
+  const handleGetStarted = () => {
+    if (onGetStarted) {
+      onGetStarted();
+    }
+    navigate('/create');
+  };
+  
   return (
     <div className="min-h-screen bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
@@ -30,7 +40,7 @@ export const LandingPage = ({ onGetStarted }: LandingPageProps) => {
 
             {/* CTA Button */}
             <button
-              onClick={onGetStarted}
+              onClick={handleGetStarted}
               type="button"
               className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-blue-700 hover:to-blue-800 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center gap-2"
             >
@@ -189,7 +199,7 @@ export const LandingPage = ({ onGetStarted }: LandingPageProps) => {
             Join thousands who have created their perfect marriage biodata
           </p>
           <button
-            onClick={onGetStarted}
+            onClick={handleGetStarted}
             className="bg-gradient-to-r from-rose-600 to-pink-600 text-white px-12 py-4 rounded-xl text-lg font-semibold hover:from-rose-700 hover:to-pink-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
           >
             Start Creating Now
