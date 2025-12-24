@@ -11,6 +11,8 @@ import { PrivacyControls } from './components/PrivacyControls';
 import { SharedBiodataView } from './components/SharedBiodataView';
 import { ToastContainer } from './components/Toast';
 import { useAiAssist } from './hooks/useAiAssist';
+import { Navbar } from './components/Navbar';
+import { Footer } from './components/Footer';
 
 function AppContent() {
   const [view, setView] = useState<'landing' | 'wizard' | 'shared'>('landing');
@@ -96,34 +98,40 @@ function AppContent() {
 
   return (
     <>
-      {view === 'landing' && <LandingPage onGetStarted={handleGetStarted} />}
+      <Navbar />
+      <div className="min-h-screen flex flex-col">
+        <main className="flex-grow">
+          {view === 'landing' && <LandingPage onGetStarted={handleGetStarted} />}
 
-      {view === 'wizard' && !isPreviewMode && (
-        <>
-          <BiodataWizard onClose={handleBackToLanding} onAiAssist={handleAiAssist} />
-          <div className="fixed bottom-4 right-4 z-20">
-            <button
-              onClick={() => setShowPrivacy(true)}
-              className="flex items-center gap-2 px-4 py-3 bg-white text-gray-700 rounded-full shadow-lg hover:shadow-xl transition-all border border-gray-200"
-            >
-              <Shield className="w-5 h-5" />
-              <span className="text-sm font-medium">Privacy</span>
-            </button>
-          </div>
-        </>
-      )}
+          {view === 'wizard' && !isPreviewMode && (
+            <>
+              <BiodataWizard onClose={handleBackToLanding} onAiAssist={handleAiAssist} />
+              <div className="fixed bottom-4 right-4 z-20">
+                <button
+                  onClick={() => setShowPrivacy(true)}
+                  className="flex items-center gap-2 px-4 py-3 bg-white text-gray-700 rounded-full shadow-lg hover:shadow-xl transition-all border border-gray-200"
+                >
+                  <Shield className="w-5 h-5" />
+                  <span className="text-sm font-medium">Privacy</span>
+                </button>
+              </div>
+            </>
+          )}
 
-      {isPreviewMode && (
-        <BiodataPreview
-          onClose={handleBackToLanding}
-          onDownload={handleDownload}
-          onShare={handleShare}
-        />
-      )}
+          {isPreviewMode && (
+            <BiodataPreview
+              onClose={handleBackToLanding}
+              onDownload={handleDownload}
+              onShare={handleShare}
+            />
+          )}
 
-      {showShareDialog && <ShareDialog onClose={() => setShowShareDialog(false)} />}
+          {showShareDialog && <ShareDialog onClose={() => setShowShareDialog(false)} />}
 
-      {showPrivacy && <PrivacyControls onClose={() => setShowPrivacy(false)} />}
+          {showPrivacy && <PrivacyControls onClose={() => setShowPrivacy(false)} />}
+        </main>
+        <Footer />
+      </div>
     </>
   );
 }

@@ -1,6 +1,5 @@
 import { Heart, Lock, Sparkles, Download, Share2, Zap } from 'lucide-react';
 import { useState } from 'react';
-import { Navbar } from './Navbar';
 
 interface LandingPageProps {
   onGetStarted: () => void;
@@ -9,7 +8,6 @@ interface LandingPageProps {
 export const LandingPage = ({ onGetStarted }: LandingPageProps) => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-pink-50">
-      <Navbar />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center mb-6">
@@ -137,12 +135,6 @@ export const LandingPage = ({ onGetStarted }: LandingPageProps) => {
 
         <FAQSection />
       </div>
-
-      <footer className="border-t border-gray-200 mt-16 py-8">
-        <div className="max-w-7xl mx-auto px-4 text-center text-gray-600">
-          <p>BiodataForWedding – A free and simple wedding biodata maker trusted by families across India.</p>
-        </div>
-      </footer>
     </div>
   );
 };

@@ -3,6 +3,8 @@ import { Download, AlertCircle } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { SharedBiodata } from '../types/biodata';
 import { getTemplateComponent } from './templates';
+import { Navbar } from './Navbar';
+import { Footer } from './Footer';
 
 interface SharedBiodataViewProps {
   shareId: string;
@@ -87,8 +89,9 @@ export const SharedBiodataView = ({ shareId }: SharedBiodataViewProps) => {
   const TemplateComponent = getTemplateComponent(biodata.customization.templateId);
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="bg-white border-b sticky top-0 z-10 shadow-sm print:hidden">
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
+      <div className="bg-white border-b sticky top-0 z-10 shadow-sm print:hidden flex-grow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div>
@@ -107,7 +110,7 @@ export const SharedBiodataView = ({ shareId }: SharedBiodataViewProps) => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto p-4 md:p-8">
+      <div className="max-w-7xl mx-auto p-4 md:p-8 flex-grow">
         <div id="biodata-content">
           <TemplateComponent
             data={biodata.data}
@@ -127,6 +130,7 @@ export const SharedBiodataView = ({ shareId }: SharedBiodataViewProps) => {
           </a>
         </p>
       </div>
+      <Footer />
     </div>
   );
 };
