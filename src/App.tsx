@@ -13,6 +13,9 @@ import { ToastContainer } from './components/Toast';
 import { useAiAssist } from './hooks/useAiAssist';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
+import { ContactPage } from './components/ContactPage';
+import { AboutPage } from './components/AboutPage';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
 function AppContent() {
   const [view, setView] = useState<'landing' | 'wizard' | 'shared'>('landing');
@@ -92,56 +95,99 @@ function AppContent() {
     }
   };
 
-  if (view === 'shared' && shareId) {
-    return <SharedBiodataView shareId={shareId} />;
-  }
+  const handleViewChange = (newView: 'landing' | 'wizard' | 'shared') => {
+    setView(newView);
+    if (newView === 'landing') {
+      setIsPreviewMode(false);
+    }
+  };
+
+  const AppRoutes = () => {
+    const location = useLocation();
+    
+    // Check if we're on a shared view route
+    if (location.pathname.startsWith('/view/')) {
+      const id = location.pathname.split('/view/')[1];
+      if (id) {
+        return <SharedBiodataView shareId={id} />;
+      }
+    }
+    
+    return (
+      <div className="min-h-screen flex flex-col">
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={
+              <>
+                <LandingPage onGetStarted={handleGetStarted} />
+                <Footer />
+              </>
+            } />
+            <Route path="/about" element={
+              <>
+                <AboutPage />
+                <Footer />
+              </>
+            } />
+            <Route path="/contact" element={
+              <>
+                <ContactPage />
+                <Footer />
+              </>
+            } />
+            <Route path="/create" element={
+              <>
+                {view === 'wizard' && !isPreviewMode && (
+                  <>
+                    <BiodataWizard onClose={handleBackToLanding} onAiAssist={handleAiAssist} />
+                    <div className="fixed bottom-4 right-4 z-20">
+                      <button
+                        onClick={() => setShowPrivacy(true)}
+                        className="flex items-center gap-2 px-4 py-3 bg-white text-gray-700 rounded-full shadow-lg hover:shadow-xl transition-all border border-gray-200"
+                      >
+                        <Shield className="w-5 h-5" />
+                        <span className="text-sm font-medium">Privacy</span>
+                      </button>
+                    </div>
+                  </>
+                )}
+
+                {isPreviewMode && (
+                  <BiodataPreview
+                    onClose={handleBackToLanding}
+                    onDownload={handleDownload}
+                    onShare={handleShare}
+                  />
+                )}
+
+                {showShareDialog && <ShareDialog onClose={() => setShowShareDialog(false)} />}
+
+                {showPrivacy && <PrivacyControls onClose={() => setShowPrivacy(false)} />}
+                <Footer />
+              </>
+            } />
+          </Routes>
+        </main>
+      </div>
+    );
+  };
 
   return (
     <>
       <Navbar />
-      <div className="min-h-screen flex flex-col">
-        <main className="flex-grow">
-          {view === 'landing' && <LandingPage onGetStarted={handleGetStarted} />}
-
-          {view === 'wizard' && !isPreviewMode && (
-            <>
-              <BiodataWizard onClose={handleBackToLanding} onAiAssist={handleAiAssist} />
-              <div className="fixed bottom-4 right-4 z-20">
-                <button
-                  onClick={() => setShowPrivacy(true)}
-                  className="flex items-center gap-2 px-4 py-3 bg-white text-gray-700 rounded-full shadow-lg hover:shadow-xl transition-all border border-gray-200"
-                >
-                  <Shield className="w-5 h-5" />
-                  <span className="text-sm font-medium">Privacy</span>
-                </button>
-              </div>
-            </>
-          )}
-
-          {isPreviewMode && (
-            <BiodataPreview
-              onClose={handleBackToLanding}
-              onDownload={handleDownload}
-              onShare={handleShare}
-            />
-          )}
-
-          {showShareDialog && <ShareDialog onClose={() => setShowShareDialog(false)} />}
-
-          {showPrivacy && <PrivacyControls onClose={() => setShowPrivacy(false)} />}
-        </main>
-        <Footer />
-      </div>
+      <AppRoutes />
     </>
   );
 }
 
 function App() {
   return (
-    <BiodataProvider>
-      <ToastContainer />
-      <AppContent />
-    </BiodataProvider>
+    <Router>
+      <BiodataProvider>
+        <ToastContainer />
+        <AppContent />
+      </BiodataProvider>
+    </Router>
   );
 }
 

@@ -1,4 +1,5 @@
 import { Heart } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const Navbar = () => {
   return (
@@ -15,18 +16,24 @@ export const Navbar = () => {
 
           {/* Right side - Navigation Links */}
           <div className="flex items-center space-x-8">
-            <a 
-              href="#"
+            <Link 
+              to="#"
               className="text-gray-600 hover:text-rose-600 font-medium transition-colors duration-200"
             >
               Blog
-            </a>
-            <a 
-              href="#"
+            </Link>
+            <Link 
+              to="/about"
+              className="text-gray-600 hover:text-rose-600 font-medium transition-colors duration-200"
+            >
+              About
+            </Link>
+            <Link 
+              to="/contact"
               className="text-gray-600 hover:text-rose-600 font-medium transition-colors duration-200"
             >
               Contact
-            </a>
+            </Link>
           </div>
         </div>
       </div>
