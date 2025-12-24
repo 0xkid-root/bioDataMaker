@@ -1,4 +1,4 @@
-import { Heart, Lock, Sparkles, Download, Share2, Zap } from 'lucide-react';
+import { Heart, Lock, Sparkles, Download, Share2, Zap, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 
 interface LandingPageProps {
@@ -7,29 +7,92 @@ interface LandingPageProps {
 
 export const LandingPage = ({ onGetStarted }: LandingPageProps) => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-pink-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center mb-6">
-            <Heart className="w-12 h-12 text-rose-500 fill-rose-500" />
+    <div className="min-h-screen bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
+        {/* Hero Section - Split Layout */}
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-20">
+          {/* Left Section - Text Content */}
+          <div className="text-left">
+            {/* Main Headline */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              <span className="text-gray-900">Create Beautiful</span>
+              <br />
+              <span className="bg-gradient-to-r from-blue-600 to-rose-600 bg-clip-text text-transparent">
+                Marriage Biodata
+              </span>
+            </h1>
+
+            {/* Description */}
+            <p className="text-xl text-gray-600 mb-8 max-w-xl">
+              Professional marriage biodata maker with premium templates.
+              Free forever, no login required.
+            </p>
+
+            {/* CTA Button */}
+            <button
+              onClick={onGetStarted}
+              type="button"
+              className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-blue-700 hover:to-blue-800 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center gap-2"
+            >
+              Create Biodata Free
+              <ArrowRight className="w-5 h-5" />
+            </button>
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-            Create Beautiful
-            <br />
-            <span className="bg-gradient-to-r from-blue-600 to-rose-600 bg-clip-text text-transparent">
-              Marriage Biodata
-            </span>
-          </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Professional marriage biodata maker with premium templates.
-            Free forever, no login required.
-          </p>
-          <button
-            onClick={onGetStarted}
-            className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-12 py-4 rounded-xl text-lg font-semibold hover:from-blue-700 hover:to-blue-800 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
-          >
-            Create Biodata Free
-          </button>
+
+          {/* Right Section - Biodata Previews */}
+          <div className="relative hidden lg:block h-[600px]">
+            {/* Background Document (Left, Back) - White/Cream */}
+            <div className="absolute left-0 top-8 w-[280px] h-[400px] transform -rotate-6 shadow-2xl rounded-lg overflow-hidden z-10">
+              <img
+                src="/images/premium-white-721x1024.png"
+                alt="Premium White Biodata Template"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Middle Document (Center) - Teal/Blue */}
+            <div className="absolute left-1/2 top-4 transform -translate-x-1/2 rotate-2 w-[300px] h-[420px] shadow-2xl rounded-lg overflow-hidden z-20">
+              <img
+                src="/images/Islamic-blue-golden-731x1024.webp"
+                alt="Islamic Blue Golden Biodata Template"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Foreground Document (Right) - Maroon/Purple */}
+            <div className="absolute right-0 top-12 w-[280px] h-[400px] transform rotate-6 shadow-2xl rounded-lg overflow-hidden z-30">
+              <img
+                src="/images/Perfect-maroon-731x1024.png"
+                alt="Perfect Maroon Biodata Template"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          {/* Mobile/Tablet View - Stacked Images */}
+          <div className="relative lg:hidden flex justify-center gap-4 mt-8">
+            <div className="w-[200px] h-[280px] transform -rotate-6 shadow-xl rounded-lg overflow-hidden">
+              <img
+                src="/images/premium-white-721x1024.png"
+                alt="Premium White Biodata Template"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="w-[200px] h-[280px] transform rotate-2 shadow-xl rounded-lg overflow-hidden z-10">
+              <img
+                src="/images/Islamic-blue-golden-731x1024.webp"
+                alt="Islamic Blue Golden Biodata Template"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="w-[200px] h-[280px] transform rotate-6 shadow-xl rounded-lg overflow-hidden">
+              <img
+                src="/images/Perfect-maroon-731x1024.png"
+                alt="Perfect Maroon Biodata Template"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
