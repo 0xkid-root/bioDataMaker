@@ -1,4 +1,5 @@
 import { Heart } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const Footer = () => {
   return (
@@ -22,13 +23,13 @@ export const Footer = () => {
             <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider">Quick Links</h3>
             <ul className="mt-4 space-y-3">
               <li>
-                <a href="#" className="text-gray-600 hover:text-rose-600 transition-colors duration-200">Home</a>
+                <Link to="/" className="text-gray-600 hover:text-rose-600 transition-colors duration-200">Home</Link>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-rose-600 transition-colors duration-200">About Us</a>
+                <Link to="/about" className="text-gray-600 hover:text-rose-600 transition-colors duration-200">About Us</Link>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-rose-600 transition-colors duration-200">Contact Us</a>
+                <Link to="/contact" className="text-gray-600 hover:text-rose-600 transition-colors duration-200">Contact Us</Link>
               </li>
             </ul>
           </div>
@@ -38,19 +39,19 @@ export const Footer = () => {
             <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider">Policies</h3>
             <ul className="mt-4 space-y-3">
               <li>
-                <a href="#" className="text-gray-600 hover:text-rose-600 transition-colors duration-200">Privacy Policy</a>
+                <Link to="#" className="text-gray-600 hover:text-rose-600 transition-colors duration-200">Privacy Policy</Link>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-rose-600 transition-colors duration-200">Terms & Conditions</a>
+                <Link to="#" className="text-gray-600 hover:text-rose-600 transition-colors duration-200">Terms & Conditions</Link>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-rose-600 transition-colors duration-200">Refund Policy</a>
+                <Link to="#" className="text-gray-600 hover:text-rose-600 transition-colors duration-200">Refund Policy</Link>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-rose-600 transition-colors duration-200">Shipping Policy</a>
+                <Link to="#" className="text-gray-600 hover:text-rose-600 transition-colors duration-200">Shipping Policy</Link>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-rose-600 transition-colors duration-200">Pricing Details</a>
+                <Link to="#" className="text-gray-600 hover:text-rose-600 transition-colors duration-200">Pricing Details</Link>
               </li>
             </ul>
           </div>
