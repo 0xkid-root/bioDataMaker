@@ -164,6 +164,41 @@ export const ContactPage = () => {
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Do you offer customer support?</h3>
               <p className="text-gray-600">Yes, our support team is available during business hours to help with any questions or issues you may have.</p>
             </div>
+            
+            <div className="border border-gray-200 rounded-lg p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">What should be included in marriage biodata?</h3>
+              <p className="text-gray-600">A marriage biodata typically includes personal details like your name, age, height, religion, educational qualifications, profession, family background, and contact information. It should also highlight your hobbies, interests, and preferences for a potential partner. A well-rounded biodata for marriage helps provide a comprehensive introduction to you and your family.</p>
+            </div>
+            
+            <div className="border border-gray-200 rounded-lg p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">How do I write about me in marriage biodata?</h3>
+              <p className="text-gray-600">When writing about yourself in a biodata, focus on key aspects such as your background, education, career, values, and personality. Be honest and clear, highlighting qualities that reflect your lifestyle and preferences. Ensure it is concise yet informative, as this section is an important part of making a first impression.</p>
+            </div>
+            
+            <div className="border border-gray-200 rounded-lg p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">How to make a biodata for marriage?</h3>
+              <p className="text-gray-600">To make a bio data, start by selecting a marriage biodata format that suits your style. Fill in the required details like personal information, family background, education, and professional life. Personalize the template to reflect your character and preferences. Once completed, you can easily download marriage biodata in your preferred format.</p>
+            </div>
+            
+            <div className="border border-gray-200 rounded-lg p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">What is a perfect marriage biodata format?</h3>
+              <p className="text-gray-600">A perfect marriage biodata format should be clean, easy to read, and organized. It should highlight your key details, including personal information, family background, education, career, and your partner preferences. Depending on cultural needs, formats like Hindu biodata format or Muslim biodata format may also be preferred.</p>
+            </div>
+            
+            <div className="border border-gray-200 rounded-lg p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">How do I write about me in a biodata?</h3>
+              <p className="text-gray-600">In your matrimonial biodata, the "About Me" section should provide a snapshot of who you are. Mention your interests, hobbies, career aspirations, and values. Keep it professional but warm, highlighting your personality and what you're looking for in a partner. This section is crucial to give your potential partner a first impression.</p>
+            </div>
+            
+            <div className="border border-gray-200 rounded-lg p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">What is the best Muslim biodata format?</h3>
+              <p className="text-gray-600">The best Muslim biodata format should include essential information like your name, age, height, religion, sect, education, profession, family background, and contact details. It should also highlight your values, lifestyle preferences, and expectations from a life partner. A well-structured Muslim biodata format respects cultural values while presenting your personality effectively.</p>
+            </div>
+            
+            <div className="border border-gray-200 rounded-lg p-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">What is the ideal Muslim marriage biodata format?</h3>
+              <p className="text-gray-600">An ideal Muslim marriage biodata format should be clear, respectful, and comprehensive. It should include your religious background, family status, education, profession, and personal preferences. The format should be professional yet warm, ensuring all important details are presented in an organized manner that aligns with Islamic values and cultural expectations.</p>
+            </div>
           </div>
         </div>
       </div>
