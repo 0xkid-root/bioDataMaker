@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Shield } from 'lucide-react';
-import toast from 'react-hot-toast';
 import { BiodataData } from './types/biodata';
 import { BiodataProvider, useBiodata } from './context/BiodataContext';
 import { LandingPage } from './components/LandingPage';

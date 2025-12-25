@@ -1,6 +1,7 @@
 import { Heart, Lock, Sparkles, Download, Share2, Zap, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Carousel } from './Carousel';
 
 interface LandingPageProps {
   onGetStarted?: () => void;
@@ -204,6 +205,24 @@ export const LandingPage = ({ onGetStarted }: LandingPageProps) => {
           >
             Start Creating Now
           </button>
+        </div>
+
+        {/* Carousel Section - Below Hero Section */}
+        <div className="mb-16 mt-8">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">Popular Biodata Templates</h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            Choose from our collection of professionally designed templates for every community and style
+          </p>
+          <Carousel 
+            images={[
+              { src: "/images/premium-white-721x1024.png", alt: "Premium White Biodata Template" },
+              { src: "/images/Islamic-blue-golden-731x1024.webp", alt: "Islamic Blue Golden Biodata Template" },
+              { src: "/images/Perfect-maroon-731x1024.png", alt: "Perfect Maroon Biodata Template" },
+              { src: "/images/blue-classic-731x1024.webp", alt: "Blue Classic Biodata Template" },
+              { src: "/images/green-yellow-muslim-731x1024.webp", alt: "Green Yellow Muslim Biodata Template" },
+              { src: "/images/red-and-gold-731x1024.webp", alt: "Red and Gold Biodata Template" },
+            ]}
+          />
         </div>
 
         <FAQSection />
