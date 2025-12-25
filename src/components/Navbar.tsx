@@ -10,7 +10,7 @@ export const Navbar = () => {
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center">
               <Heart className="h-8 w-8 text-rose-500 fill-rose-500" />
-              <span className="ml-2 text-xl font-bold text-gray-900">BiodataForWedding</span>
+              <span className="ml-2 text-xl font-bold text-gray-900 cursor-pointer"><Link to="/">BiodataForWedding</Link></span>
             </div>
           </div>
 
