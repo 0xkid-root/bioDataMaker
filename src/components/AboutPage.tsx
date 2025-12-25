@@ -1,4 +1,6 @@
 import { Heart, Users, Star, Sparkles } from 'lucide-react';
+import { FAQSection } from './FAQSection';
+
 
 export const AboutPage = () => {
   return (
@@ -187,6 +189,7 @@ export const AboutPage = () => {
             </div>
           </div>
         </div>
+        <FAQSection/>
       </div>
     </div>
   );
