@@ -85,6 +85,49 @@ export const TemplatePreview = ({ templateId, category }: TemplatePreviewProps) 
           </div>
         );
 
+      case 'simple-1':
+      case 'simple-2':
+      case 'simple-3':
+      case 'simple-4':
+      case 'simple-5':
+      case 'simple-6':
+      case 'simple-7':
+      case 'simple-8':
+      case 'simple-9':
+      case 'simple-10':
+      case 'simple-11':
+      case 'simple-12':
+      case 'simple-13':
+      case 'simple-14':
+      case 'simple-15':
+        // Get the image path based on template ID
+        const simpleImageMap: { [key: string]: string } = {
+          'simple-1': '/images/simpleImg/101.webp',
+          'simple-2': '/images/simpleImg/102.webp',
+          'simple-3': '/images/simpleImg/105.webp',
+          'simple-4': '/images/simpleImg/107.webp',
+          'simple-5': '/images/simpleImg/109.webp',
+          'simple-6': '/images/simpleImg/110.webp',
+          'simple-7': '/images/simpleImg/111.webp',
+          'simple-8': '/images/simpleImg/112.webp',
+          'simple-9': '/images/simpleImg/114.webp',
+          'simple-10': '/images/simpleImg/116.webp',
+          'simple-11': '/images/simpleImg/117.webp',
+          'simple-12': '/images/simpleImg/123.webp',
+          'simple-13': '/images/simpleImg/125.webp',
+          'simple-14': '/images/simpleImg/127.webp',
+          'simple-15': '/images/simpleImg/156.webp',
+        };
+        return (
+          <div className="w-full h-full bg-white rounded overflow-hidden">
+            <img
+              src={simpleImageMap[templateId] || '/images/simpleImg/101.webp'}
+              alt={`${templateId} preview`}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        );
+
       default:
         return (
           <div className="w-full h-full bg-gradient-to-br from-blue-50 to-blue-100 flex flex-col p-2">
