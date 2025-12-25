@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import {  useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Shield } from 'lucide-react';
 import { useBiodata } from '../context/BiodataContext';
