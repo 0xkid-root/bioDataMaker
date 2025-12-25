@@ -50,24 +50,93 @@
 @media print {
   @page {
     size: A4;
-    margin: 0;
+    margin: 0.5cm;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 
   body {
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
+    background: white !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  .print\:hidden {
+  /* Hide UI elements during print */
+  .print\:hidden,
+  button:not(.print\:visible),
+  nav,
+  header,
+  footer {
     display: none !important;
   }
 
+  /* Make fixed/absolute elements relative for print */
+  .fixed,
+  .absolute {
+    position: relative !important;
+  }
+
+  /* Remove backdrop and overlay backgrounds */
+  .bg-gray-900,
+  .bg-opacity-50 {
+    background: transparent !important;
+    opacity: 1 !important;
+  }
+
+  /* Show biodata content */
   #biodata-preview,
   #biodata-content {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    background: white !important;
+    position: relative !important;
+    overflow: visible !important;
+  }
+
+  /* Ensure all content inside is visible */
+  #biodata-preview *,
+  #biodata-content * {
+    visibility: visible !important;
+    display: block !important;
+  }
+
+  #biodata-preview img,
+  #biodata-content img {
+    display: inline-block !important;
+    max-width: 100% !important;
+  }
+
+  /* Remove padding from containers */
+  .p-4,
+  .p-8,
+  .px-4,
+  .py-4 {
+    padding: 0 !important;
+  }
+
+  .bg-gray-100 {
+    background: transparent !important;
+  }
+
+  /* Ensure white backgrounds are visible */
+  .bg-white {
+    background: white !important;
+  }
+
+  /* Hide rounded corners and shadows in print */
+  .rounded-lg,
+  .rounded-xl,
+  .shadow-lg,
+  .shadow-xl {
+    border-radius: 0 !important;
+    box-shadow: none !important;
   }
 }
 

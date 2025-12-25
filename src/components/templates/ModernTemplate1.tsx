@@ -12,13 +12,19 @@ export const ModernTemplate1 = ({ data, customization }: TemplateProps) => {
   const Section = ({ title, children }: { title: string; children: React.ReactNode }) => {
     if (!children) return null;
     return (
-      <div className="mb-6">
-        <h3
-          className="text-lg font-bold mb-3 pb-2 border-b-2"
-          style={{ borderColor: customization.primaryColor, color: customization.primaryColor }}
-        >
-          {title}
-        </h3>
+      <div className="mb-8">
+        <div className="mb-4">
+          <h3
+            className="text-lg font-bold mb-2"
+            style={{ color: customization.primaryColor }}
+          >
+            {title}
+          </h3>
+          <div className="flex items-center gap-2">
+            <div className="h-1 w-12 rounded-full" style={{ backgroundColor: customization.primaryColor }}></div>
+            <div className="h-1 flex-1 rounded-full bg-gray-200"></div>
+          </div>
+        </div>
         {children}
       </div>
     );

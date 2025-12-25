@@ -78,9 +78,15 @@ export const TraditionalElegantTemplate = ({ data, customization }: TemplateProp
           <div className="flex flex-col md:flex-row gap-8">
             <div className="flex-grow">
               <div className="mb-8">
-                <h3 className="text-2xl font-bold mb-4 pb-2 border-b-2 flex items-center gap-2" style={{ borderColor: customization.primaryColor, color: customization.primaryColor }}>
-                  <span>📋</span> Personal Details
-                </h3>
+                <div className="mb-4">
+                  <h3 className="text-2xl font-bold mb-3 flex items-center gap-2" style={{ color: customization.primaryColor }}>
+                    <span>📋</span> Personal Details
+                  </h3>
+                  <div className="flex items-center gap-2 mt-2">
+                    <div className="h-1 w-16 rounded-full" style={{ backgroundColor: customization.primaryColor }}></div>
+                    <div className="h-1 flex-1 rounded-full bg-gray-200"></div>
+                  </div>
+                </div>
                 <Field label="Date of Birth" value={personal?.dateOfBirth ? formatDate(personal.dateOfBirth) : ''} />
                 <Field label="Time of Birth" value={personal?.timeOfBirth} />
                 <Field label="Place of Birth" value={personal?.placeOfBirth} />
@@ -96,9 +102,15 @@ export const TraditionalElegantTemplate = ({ data, customization }: TemplateProp
               </div>
 
               <div className="mb-8">
-                <h3 className="text-2xl font-bold mb-4 pb-2 border-b-2 flex items-center gap-2" style={{ borderColor: customization.primaryColor, color: customization.primaryColor }}>
-                  <span>🎓</span> Education & Career
-                </h3>
+                <div className="mb-4">
+                  <h3 className="text-2xl font-bold mb-3 flex items-center gap-2" style={{ color: customization.primaryColor }}>
+                    <span>🎓</span> Education & Career
+                  </h3>
+                  <div className="flex items-center gap-2 mt-2">
+                    <div className="h-1 w-16 rounded-full" style={{ backgroundColor: customization.primaryColor }}></div>
+                    <div className="h-1 flex-1 rounded-full bg-gray-200"></div>
+                  </div>
+                </div>
                 <Field label="Qualification" value={education?.highestQualification} />
                 <Field label="Institute" value={education?.instituteName} />
                 <Field label="Profession" value={education?.profession} />
@@ -110,9 +122,15 @@ export const TraditionalElegantTemplate = ({ data, customization }: TemplateProp
               </div>
 
               <div className="mb-8">
-                <h3 className="text-2xl font-bold mb-4 pb-2 border-b-2 flex items-center gap-2" style={{ borderColor: customization.primaryColor, color: customization.primaryColor }}>
-                  <span>👨‍👩‍👧</span> Family Details
-                </h3>
+                <div className="mb-4">
+                  <h3 className="text-2xl font-bold mb-3 flex items-center gap-2" style={{ color: customization.primaryColor }}>
+                    <span>👨‍👩‍👧</span> Family Details
+                  </h3>
+                  <div className="flex items-center gap-2 mt-2">
+                    <div className="h-1 w-16 rounded-full" style={{ backgroundColor: customization.primaryColor }}></div>
+                    <div className="h-1 flex-1 rounded-full bg-gray-200"></div>
+                  </div>
+                </div>
                 <Field label="Father's Name" value={family?.fatherName} />
                 <Field label="Father's Occupation" value={family?.fatherOccupation} />
                 <Field label="Mother's Name" value={family?.motherName} />
@@ -126,9 +144,15 @@ export const TraditionalElegantTemplate = ({ data, customization }: TemplateProp
 
               {horoscope && Object.values(horoscope).some(v => !isEmpty(v)) && (
                 <div className="mb-8">
-                  <h3 className="text-2xl font-bold mb-4 pb-2 border-b-2 flex items-center gap-2" style={{ borderColor: customization.primaryColor, color: customization.primaryColor }}>
-                    <span>⭐</span> Horoscope Details
-                  </h3>
+                  <div className="mb-4">
+                    <h3 className="text-2xl font-bold mb-3 flex items-center gap-2" style={{ color: customization.primaryColor }}>
+                      <span>⭐</span> Horoscope Details
+                    </h3>
+                    <div className="flex items-center gap-2 mt-2">
+                      <div className="h-1 w-16 rounded-full" style={{ backgroundColor: customization.primaryColor }}></div>
+                      <div className="h-1 flex-1 rounded-full bg-gray-200"></div>
+                    </div>
+                  </div>
                   <Field label="Rashi" value={horoscope.rashi} />
                   <Field label="Nakshatra" value={horoscope.nakshatra} />
                   <Field label="Gan" value={horoscope.gan} />
@@ -140,9 +164,15 @@ export const TraditionalElegantTemplate = ({ data, customization }: TemplateProp
 
               {(lifestyle?.aboutMe || lifestyle?.partnerExpectations) && (
                 <div className="mb-8">
-                  <h3 className="text-2xl font-bold mb-4 pb-2 border-b-2 flex items-center gap-2" style={{ borderColor: customization.primaryColor, color: customization.primaryColor }}>
-                    <span>💭</span> About & Expectations
-                  </h3>
+                  <div className="mb-4">
+                    <h3 className="text-2xl font-bold mb-3 flex items-center gap-2" style={{ color: customization.primaryColor }}>
+                      <span>💭</span> About & Expectations
+                    </h3>
+                    <div className="flex items-center gap-2 mt-2">
+                      <div className="h-1 w-16 rounded-full" style={{ backgroundColor: customization.primaryColor }}></div>
+                      <div className="h-1 flex-1 rounded-full bg-gray-200"></div>
+                    </div>
+                  </div>
                   <Field label="Diet" value={lifestyle?.diet} />
                   <Field label="Hobbies" value={lifestyle?.hobbies} />
                   <TextBlock title="About Me" content={lifestyle.aboutMe} />
@@ -151,9 +181,15 @@ export const TraditionalElegantTemplate = ({ data, customization }: TemplateProp
               )}
 
               <div className="border-t-4 pt-6" style={{ borderColor: customization.primaryColor }}>
-                <h3 className="text-2xl font-bold mb-4 pb-2 border-b-2 flex items-center gap-2" style={{ borderColor: customization.primaryColor, color: customization.primaryColor }}>
-                  <span>📞</span> Contact Information
-                </h3>
+                <div className="mb-4">
+                  <h3 className="text-2xl font-bold mb-3 flex items-center gap-2" style={{ color: customization.primaryColor }}>
+                    <span>📞</span> Contact Information
+                  </h3>
+                  <div className="flex items-center gap-2 mt-2">
+                    <div className="h-1 w-16 rounded-full" style={{ backgroundColor: customization.primaryColor }}></div>
+                    <div className="h-1 flex-1 rounded-full bg-gray-200"></div>
+                  </div>
+                </div>
                 <Field label="Mobile" value={contact?.mobileNumber} />
                 <Field label="Alternate Number" value={contact?.alternateNumber} />
                 <Field label="Email" value={contact?.email} />

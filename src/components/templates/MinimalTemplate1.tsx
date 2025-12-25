@@ -60,12 +60,18 @@ export const MinimalTemplate1 = ({ data, customization }: TemplateProps) => {
 
         <div className="space-y-8">
           <div>
-            <h2
-              className="text-xl font-bold mb-4 pb-2 border-b"
-              style={{ color: customization.primaryColor }}
-            >
-              Personal
-            </h2>
+            <div className="mb-4">
+              <h2
+                className="text-xl font-bold mb-3"
+                style={{ color: customization.primaryColor }}
+              >
+                Personal
+              </h2>
+              <div className="flex items-center gap-2">
+                <div className="h-0.5 w-12 rounded-full" style={{ backgroundColor: customization.primaryColor }}></div>
+                <div className="h-0.5 flex-1 rounded-full bg-gray-200"></div>
+              </div>
+            </div>
             <InfoGrid
               items={[
                 { label: 'Date of Birth', value: personal?.dateOfBirth ? formatDate(personal.dateOfBirth) : '' },
@@ -81,12 +87,18 @@ export const MinimalTemplate1 = ({ data, customization }: TemplateProps) => {
           </div>
 
           <div>
-            <h2
-              className="text-xl font-bold mb-4 pb-2 border-b"
-              style={{ color: customization.primaryColor }}
-            >
-              Education & Career
-            </h2>
+            <div className="mb-4">
+              <h2
+                className="text-xl font-bold mb-3"
+                style={{ color: customization.primaryColor }}
+              >
+                Education & Career
+              </h2>
+              <div className="flex items-center gap-2">
+                <div className="h-0.5 w-12 rounded-full" style={{ backgroundColor: customization.primaryColor }}></div>
+                <div className="h-0.5 flex-1 rounded-full bg-gray-200"></div>
+              </div>
+            </div>
             <InfoGrid
               items={[
                 { label: 'Qualification', value: education?.highestQualification },
@@ -102,12 +114,18 @@ export const MinimalTemplate1 = ({ data, customization }: TemplateProps) => {
           </div>
 
           <div>
-            <h2
-              className="text-xl font-bold mb-4 pb-2 border-b"
-              style={{ color: customization.primaryColor }}
-            >
-              Family
-            </h2>
+            <div className="mb-4">
+              <h2
+                className="text-xl font-bold mb-3"
+                style={{ color: customization.primaryColor }}
+              >
+                Family
+              </h2>
+              <div className="flex items-center gap-2">
+                <div className="h-0.5 w-12 rounded-full" style={{ backgroundColor: customization.primaryColor }}></div>
+                <div className="h-0.5 flex-1 rounded-full bg-gray-200"></div>
+              </div>
+            </div>
             <InfoGrid
               items={[
                 { label: "Father's Name", value: family?.fatherName },
@@ -124,12 +142,18 @@ export const MinimalTemplate1 = ({ data, customization }: TemplateProps) => {
 
           {lifestyle?.aboutMe && (
             <div>
-              <h2
-                className="text-xl font-bold mb-4 pb-2 border-b"
-                style={{ color: customization.primaryColor }}
-              >
-                About
-              </h2>
+              <div className="mb-4">
+                <h2
+                  className="text-xl font-bold mb-3"
+                  style={{ color: customization.primaryColor }}
+                >
+                  About
+                </h2>
+                <div className="flex items-center gap-2">
+                  <div className="h-0.5 w-12 rounded-full" style={{ backgroundColor: customization.primaryColor }}></div>
+                  <div className="h-0.5 flex-1 rounded-full bg-gray-200"></div>
+                </div>
+              </div>
               <TextBlock content={lifestyle.aboutMe} />
               <InfoGrid
                 items={[
@@ -143,24 +167,36 @@ export const MinimalTemplate1 = ({ data, customization }: TemplateProps) => {
 
           {lifestyle?.partnerExpectations && (
             <div>
-              <h2
-                className="text-xl font-bold mb-4 pb-2 border-b"
-                style={{ color: customization.primaryColor }}
-              >
-                Partner Expectations
-              </h2>
+              <div className="mb-4">
+                <h2
+                  className="text-xl font-bold mb-3"
+                  style={{ color: customization.primaryColor }}
+                >
+                  Partner Expectations
+                </h2>
+                <div className="flex items-center gap-2">
+                  <div className="h-0.5 w-12 rounded-full" style={{ backgroundColor: customization.primaryColor }}></div>
+                  <div className="h-0.5 flex-1 rounded-full bg-gray-200"></div>
+                </div>
+              </div>
               <TextBlock content={lifestyle.partnerExpectations} />
             </div>
           )}
 
           {horoscope && Object.values(horoscope).some(v => !isEmpty(v)) && (
             <div>
-              <h2
-                className="text-xl font-bold mb-4 pb-2 border-b"
-                style={{ color: customization.primaryColor }}
-              >
-                Horoscope
-              </h2>
+              <div className="mb-4">
+                <h2
+                  className="text-xl font-bold mb-3"
+                  style={{ color: customization.primaryColor }}
+                >
+                  Horoscope
+                </h2>
+                <div className="flex items-center gap-2">
+                  <div className="h-0.5 w-12 rounded-full" style={{ backgroundColor: customization.primaryColor }}></div>
+                  <div className="h-0.5 flex-1 rounded-full bg-gray-200"></div>
+                </div>
+              </div>
               <InfoGrid
                 items={[
                   { label: 'Rashi', value: horoscope.rashi },
@@ -174,12 +210,18 @@ export const MinimalTemplate1 = ({ data, customization }: TemplateProps) => {
           )}
 
           <div>
-            <h2
-              className="text-xl font-bold mb-4 pb-2 border-b"
-              style={{ color: customization.primaryColor }}
-            >
-              Contact
-            </h2>
+            <div className="mb-4">
+              <h2
+                className="text-xl font-bold mb-3"
+                style={{ color: customization.primaryColor }}
+              >
+                Contact
+              </h2>
+              <div className="flex items-center gap-2">
+                <div className="h-0.5 w-12 rounded-full" style={{ backgroundColor: customization.primaryColor }}></div>
+                <div className="h-0.5 flex-1 rounded-full bg-gray-200"></div>
+              </div>
+            </div>
             <InfoGrid
               items={[
                 { label: 'Mobile', value: contact?.mobileNumber },
