@@ -11,7 +11,7 @@ export const TemplateCustomizer = () => {
     useBiodata();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
-  const categories = ['all', 'modern', 'traditional', 'minimal', 'simple'];
+  const categories = ['all', 'modern', 'traditional', 'minimal', 'simple', 'decorative', 'islamic', 'premium', 'job'];
 
   const filteredTemplates =
     selectedCategory === 'all'
@@ -42,11 +42,10 @@ export const TemplateCustomizer = () => {
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-4 py-2 rounded-lg capitalize whitespace-nowrap transition-all ${
-                selectedCategory === category
+              className={`px-4 py-2 rounded-lg capitalize whitespace-nowrap transition-all ${selectedCategory === category
                   ? 'bg-blue-600 text-white'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-              }`}
+                }`}
             >
               {category}
             </button>
@@ -58,11 +57,10 @@ export const TemplateCustomizer = () => {
             <button
               key={template.id}
               onClick={() => updateCustomization({ templateId: template.id })}
-              className={`p-3 rounded-lg border-2 transition-all hover:shadow-lg hover:-translate-y-1 ${
-                customization.templateId === template.id
+              className={`p-3 rounded-lg border-2 transition-all hover:shadow-lg hover:-translate-y-1 ${customization.templateId === template.id
                   ? 'border-blue-600 bg-blue-50 shadow-md'
                   : 'border-gray-200 hover:border-blue-300'
-              }`}
+                }`}
             >
               <div className="mb-2">
                 <TemplatePreview templateId={template.id} category={template.category} />
@@ -88,11 +86,10 @@ export const TemplateCustomizer = () => {
               <button
                 key={color.value}
                 onClick={() => updateCustomization({ primaryColor: color.value })}
-                className={`p-2 rounded-lg border-2 transition-all hover:scale-105 ${
-                  customization.primaryColor === color.value
+                className={`p-2 rounded-lg border-2 transition-all hover:scale-105 ${customization.primaryColor === color.value
                     ? 'border-gray-900'
                     : 'border-gray-200'
-                }`}
+                  }`}
               >
                 <div
                   className="w-full h-12 rounded"
@@ -113,11 +110,10 @@ export const TemplateCustomizer = () => {
               <button
                 key={font.value}
                 onClick={() => updateCustomization({ fontFamily: font.value })}
-                className={`w-full p-3 rounded-lg border-2 text-left transition-all ${
-                  customization.fontFamily === font.value
+                className={`w-full p-3 rounded-lg border-2 text-left transition-all ${customization.fontFamily === font.value
                     ? 'border-blue-600 bg-blue-50'
                     : 'border-gray-200 hover:border-gray-300'
-                }`}
+                  }`}
                 style={{ fontFamily: font.value }}
               >
                 {font.name}

@@ -5,6 +5,7 @@ import { TraditionalRoyalTemplate } from './TraditionalRoyalTemplate';
 import { TraditionalPremiumTemplate } from './TraditionalPremiumTemplate';
 import { MinimalTemplate1 } from './MinimalTemplate1';
 import { SimpleTemplate } from './SimpleTemplate';
+import { ImageBasedTemplate } from './ImageBasedTemplate';
 import { Template } from '../../types/biodata';
 
 export const TEMPLATES: Template[] = [
@@ -204,6 +205,70 @@ export const TEMPLATES: Template[] = [
     thumbnail: '',
     isPremium: false,
   },
+  // Decorative Templates
+  {
+    id: 'islamic-1',
+    name: 'Islamic Blue Golden',
+    category: 'islamic',
+    thumbnail: '/images/Islamic-blue-golden-731x1024.webp',
+    isPremium: false,
+  },
+  {
+    id: 'islamic-2',
+    name: 'Green Yellow Islamic',
+    category: 'islamic',
+    thumbnail: '/images/green-yellow-muslim-731x1024.webp',
+    isPremium: false,
+  },
+  {
+    id: 'decorative-1',
+    name: 'Red & Gold Royal',
+    category: 'decorative',
+    thumbnail: '/images/red-and-gold-731x1024.webp',
+    isPremium: false,
+  },
+  {
+    id: 'decorative-2',
+    name: 'Perfect Maroon',
+    category: 'decorative',
+    thumbnail: '/images/Perfect-maroon-731x1024.png',
+    isPremium: false,
+  },
+  {
+    id: 'decorative-3',
+    name: 'Glowing Elegant',
+    category: 'decorative',
+    thumbnail: '/images/glowing-703x1024.webp',
+    isPremium: false,
+  },
+  {
+    id: 'premium-1',
+    name: 'Blue Classic Premium',
+    category: 'premium',
+    thumbnail: '/images/blue-classic-731x1024.webp',
+    isPremium: false,
+  },
+  {
+    id: 'premium-2',
+    name: 'Classical Heritage',
+    category: 'premium',
+    thumbnail: '/images/classical-703x1024.webp',
+    isPremium: false,
+  },
+  {
+    id: 'premium-3',
+    name: 'Premium White Elegance',
+    category: 'premium',
+    thumbnail: '/images/premium-white-721x1024.png',
+    isPremium: false,
+  },
+  {
+    id: 'modern-6',
+    name: 'Nature Modern',
+    category: 'modern',
+    thumbnail: '/images/nuture-735x1024.png',
+    isPremium: false,
+  },
 ];
 
 export const getTemplateComponent = (templateId: string) => {
@@ -237,7 +302,19 @@ export const getTemplateComponent = (templateId: string) => {
     case 'simple-14':
     case 'simple-15':
       return SimpleTemplate;
+    // Image-Based Templates
+    case 'islamic-1':
+    case 'islamic-2':
+    case 'decorative-1':
+    case 'decorative-2':
+    case 'decorative-3':
+    case 'premium-1':
+    case 'premium-2':
+    case 'premium-3':
+    case 'modern-6':
+      return ImageBasedTemplate;
     default:
       return ModernTemplate1;
   }
 };
+

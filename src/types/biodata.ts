@@ -95,7 +95,7 @@ export interface TemplateCustomization {
 export interface Template {
   id: string;
   name: string;
-  category: 'simple' | 'modern' | 'traditional' | 'minimal';
+  category: 'simple' | 'modern' | 'traditional' | 'minimal' | 'decorative' | 'islamic' | 'premium' | 'job';
   thumbnail: string;
   isPremium: boolean;
 }
