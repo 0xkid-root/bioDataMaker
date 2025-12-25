@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { FAQSection } from './FAQSection';
 
 export const ContactPage = () => {
   return (
@@ -201,6 +202,8 @@ export const ContactPage = () => {
             </div>
           </div>
         </div>
+
+        <FAQSection/>
       </div>
     </div>
   );

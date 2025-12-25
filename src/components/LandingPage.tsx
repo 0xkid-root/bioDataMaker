@@ -2,6 +2,7 @@ import { Heart, Lock, Sparkles, Download, Share2, Zap, ArrowRight } from 'lucide
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Carousel } from './Carousel';
+import { FAQSection } from './FAQSection';
 
 interface LandingPageProps {
   onGetStarted?: () => void;
@@ -145,6 +146,25 @@ export const LandingPage = ({ onGetStarted }: LandingPageProps) => {
           />
         </div>
 
+         {/* Carousel Section - Below Hero Section */}
+        <div className="mb-16 mt-8">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">Popular Biodata Templates</h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            Choose from our collection of professionally designed templates for every community and style
+          </p>
+          <Carousel 
+            images={[
+              { src: "/images/premium-white-721x1024.png", alt: "Premium White Biodata Template" },
+              { src: "/images/Islamic-blue-golden-731x1024.webp", alt: "Islamic Blue Golden Biodata Template" },
+              { src: "/images/Perfect-maroon-731x1024.png", alt: "Perfect Maroon Biodata Template" },
+              { src: "/images/blue-classic-731x1024.webp", alt: "Blue Classic Biodata Template" },
+              { src: "/images/green-yellow-muslim-731x1024.webp", alt: "Green Yellow Muslim Biodata Template" },
+              { src: "/images/red-and-gold-731x1024.webp", alt: "Red and Gold Biodata Template" },
+            ]}
+          />
+        </div>
+
+
         <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 mb-16">
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
             Why Choose Our Biodata Maker?
@@ -207,105 +227,13 @@ export const LandingPage = ({ onGetStarted }: LandingPageProps) => {
           </button>
         </div>
 
-        {/* Carousel Section - Below Hero Section */}
-        <div className="mb-16 mt-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">Popular Biodata Templates</h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            Choose from our collection of professionally designed templates for every community and style
-          </p>
-          <Carousel 
-            images={[
-              { src: "/images/premium-white-721x1024.png", alt: "Premium White Biodata Template" },
-              { src: "/images/Islamic-blue-golden-731x1024.webp", alt: "Islamic Blue Golden Biodata Template" },
-              { src: "/images/Perfect-maroon-731x1024.png", alt: "Perfect Maroon Biodata Template" },
-              { src: "/images/blue-classic-731x1024.webp", alt: "Blue Classic Biodata Template" },
-              { src: "/images/green-yellow-muslim-731x1024.webp", alt: "Green Yellow Muslim Biodata Template" },
-              { src: "/images/red-and-gold-731x1024.webp", alt: "Red and Gold Biodata Template" },
-            ]}
-          />
-        </div>
-
+       
         <FAQSection />
       </div>
     </div>
   );
 };
 
-const FAQSection = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
-  const faqs = [
-    {
-      question: "Is Creating a Biodata Really Free?",
-      answer: "Absolutely! Our platform offers the freedom to create your marriage biodata without any charges. The free version allows you to include up to 10 fields in your biodata. If you need more fields with full visibility, you can explore our affordable paid options. Enjoy a hassle-free experience with no hidden costs!"
-    },
-    {
-      question: "Is My Data Safe If I Create My Biodata Here?",
-      answer: "Your privacy is our top priority! Your biodata is created and processed entirely in your browser - we do not store your personal information on our servers. The only data we collect is your name and mobile number, which is required solely for payment verification. We never sell, share, or transfer your data to anyone. Your information stays with you, safe and secure."
-    },
-    {
-      question: "How Simple is the Biodata Creation Process?",
-      answer: "Creating your biodata is as easy as 1-2-3. Our user-friendly interface ensures a straightforward and simple process, guiding you through each step seamlessly"
-    },
-    {
-      question: "What Sets Your Designs Apart?",
-      answer: "Our designs are not just visually appealing they're the latest in matrimonial trends. We blend tradition with modernity, providing a stunning backdrop for your love story."
-    },
-    {
-      question: "Are the Designs High-Quality?",
-      answer: "Absolutely! We take pride in delivering high-quality designs to ensure your marriage biodata reflects the significance of your journey with elegance and precision"
-    },
-    {
-      question: "Can I Preview Before Finalizing?",
-      answer: "Certainly! We believe in perfection. Preview and tailor your biodata to perfection before finalizing. Your satisfaction is our top priority"
-    },
-    {
-      question: "How Do I Download the Final Biodata?",
-      answer: "Downloading your final biodata is a breeze. Once you've previewed and selected your template, simply click download, and your personalized biodata is ready to go"
-    }
-  ];
-
-  return (
-    <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 mb-16">
-      <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
-        FAQs
-      </h2>
-      <p className="text-lg text-gray-600 mb-8 text-center max-w-3xl mx-auto">
-        Your Questions, Our Answers: Unveiling the Biodata Creation Journey
-      </p>
-      <div className="space-y-4">
-        {faqs.map((faq, index) => (
-          <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
-            <button
-              className="flex justify-between items-center w-full p-6 text-left bg-gray-50 hover:bg-gray-100 transition-colors"
-              onClick={() => toggleFAQ(index)}
-            >
-              <h3 className="text-lg font-semibold text-gray-900">{faq.question}</h3>
-              <svg 
-                className={`w-5 h-5 text-gray-500 transform transition-transform ${openIndex === index ? 'rotate-180' : ''}`}
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24" 
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            {openIndex === index && (
-              <div className="p-6 bg-white">
-                <p className="text-gray-600">{faq.answer}</p>
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
 
 interface FeatureCardProps {
   icon: React.ReactNode;
