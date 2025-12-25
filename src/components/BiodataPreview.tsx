@@ -17,6 +17,7 @@ export const BiodataPreview = ({
 }: BiodataPreviewProps) => {
   const { biodataData, customization, setIsPreviewMode } = useBiodata();
   const [showCustomizer, setShowCustomizer] = useState(false);
+  // Recalculate template component when templateId changes
   const TemplateComponent = getTemplateComponent(customization.templateId);
 
   const handleBackdropClick = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
@@ -125,6 +126,7 @@ export const BiodataPreview = ({
               id="biodata-preview" 
               className="mx-auto bg-white shadow-lg print:shadow-none print:mx-0"
               onClick={(e) => e.stopPropagation()}
+              key={customization.templateId}
             >
               <TemplateComponent data={biodataData} customization={customization} />
             </div>
