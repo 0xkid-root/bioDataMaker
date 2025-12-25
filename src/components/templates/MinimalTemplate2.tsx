@@ -22,12 +22,18 @@ export const MinimalTemplate2 = ({ data, customization }: TemplateProps) => {
   const Section = ({ title, children }: { title: string; children: React.ReactNode }) => {
     return (
       <div className="mb-8">
-        <h3
-          className="text-lg font-bold mb-4 pb-2 tracking-wide uppercase"
-          style={{ color: customization.primaryColor, borderBottom: `2px solid ${customization.primaryColor}` }}
-        >
-          {title}
-        </h3>
+        <div className="mb-4">
+          <h3
+            className="text-lg font-bold mb-3 tracking-wide uppercase"
+            style={{ color: customization.primaryColor }}
+          >
+            {title}
+          </h3>
+          <div className="flex items-center gap-2">
+            <div className="h-0.5 w-16 rounded-full" style={{ backgroundColor: customization.primaryColor }}></div>
+            <div className="h-0.5 flex-1 rounded-full bg-gray-200"></div>
+          </div>
+        </div>
         {children}
       </div>
     );
