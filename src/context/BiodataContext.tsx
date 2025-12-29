@@ -4,7 +4,7 @@ import { saveToDraft, loadFromDraft, clearDraft } from '../utils/helpers';
 
 interface BiodataContextType {
   biodataData: Partial<BiodataData>;
-  updateBiodataData: (section: keyof BiodataData, data: Partial<BiodataData[keyof BiodataData]>) => void;
+  updateBiodataData: (section: Exclude<keyof BiodataData, 'profilePhoto'>, data: Partial<BiodataData[Exclude<keyof BiodataData, 'profilePhoto'>]>) => void;
   setProfilePhoto: (photo: string) => void;
   customization: TemplateCustomization;
   updateCustomization: (updates: Partial<TemplateCustomization>) => void;
@@ -19,8 +19,8 @@ const BiodataContext = createContext<BiodataContextType | undefined>(undefined);
 
 const defaultCustomization: TemplateCustomization = {
   templateId: 'modern-1',
-  primaryColor: '#2563eb',
-  fontFamily: 'Inter, sans-serif',
+  primaryColor: '#be123c', // Premium Rose/Maroon
+  fontFamily: "'Playfair Display', serif",
   showPhoto: true,
   hiddenSections: [],
 };
@@ -45,8 +45,8 @@ export const BiodataProvider = ({ children }: { children: ReactNode }) => {
   }, [biodataData]);
 
   const updateBiodataData = (
-    section: keyof BiodataData,
-    data: Partial<BiodataData[keyof BiodataData]>
+    section: Exclude<keyof BiodataData, 'profilePhoto'>,
+    data: Partial<BiodataData[Exclude<keyof BiodataData, 'profilePhoto'>]>
   ) => {
     setBiodataData((prev) => {
       const currentSection = prev[section];
@@ -54,7 +54,7 @@ export const BiodataProvider = ({ children }: { children: ReactNode }) => {
         ...prev,
         [section]: {
           ...(currentSection && typeof currentSection === 'object' ? currentSection : {}),
-          ...data,
+          ...(data as object),
         },
       };
     });

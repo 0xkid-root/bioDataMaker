@@ -10,14 +10,14 @@ interface LandingPageProps {
 
 export const LandingPage = ({ onGetStarted }: LandingPageProps) => {
   const navigate = useNavigate();
-  
+
   const handleGetStarted = () => {
     if (onGetStarted) {
       onGetStarted();
     }
     navigate('/create');
   };
-  
+
   return (
     <div className="min-h-screen bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
@@ -146,13 +146,13 @@ export const LandingPage = ({ onGetStarted }: LandingPageProps) => {
           />
         </div>
 
-         {/* Carousel Section - Below Hero Section */}
+        {/* Carousel Section - Below Hero Section */}
         <div className="mb-16 mt-8">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">Popular Biodata Templates</h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
             Choose from our collection of professionally designed templates for every community and style
           </p>
-          <Carousel 
+          <Carousel
             images={[
               { src: "/images/premium-white-721x1024.png", alt: "Premium White Biodata Template" },
               { src: "/images/Islamic-blue-golden-731x1024.webp", alt: "Islamic Blue Golden Biodata Template" },
@@ -227,7 +227,7 @@ export const LandingPage = ({ onGetStarted }: LandingPageProps) => {
           </button>
         </div>
 
-       
+
         <FAQSection />
       </div>
     </div>
